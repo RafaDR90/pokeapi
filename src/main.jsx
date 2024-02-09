@@ -7,6 +7,7 @@ import Login from './components/Login.jsx'
 import Register from './components/Register.jsx'
 import Navbar from './components/navBar/NavBar.jsx'
 import auth from './Firebase-conf.js'
+import Pokemons from './components/Pokemons.jsx'
 
 
 const router= createBrowserRouter([
@@ -31,6 +32,13 @@ const router= createBrowserRouter([
     <Register/>
     </>,
   },
+  {
+    path: '/Pokedex',
+    element: <>
+    <Navbar/>
+    <Pokemons/>
+    </>,
+  }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -36,28 +36,41 @@ const Navbar = () => {
   };
 
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        {!isLogged ?
-        <>
-        <li>
-          <Link to="/login">Iniciar Sesión</Link>
-        </li>
-        <li>
-          <Link to="/register">Registro</Link>
-        </li>
-        </>: null
-        }
-        {isLogged ? 
-        <li>
-          <button  onClick={handleLogout}>Cerrar Sesión</button>
-        </li>: null
-        }
-      </ul>
-    </nav>
+    <header className="bg-dark fixed-top" style={{ width: '100vw' }}>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-secondary">
+        <div className="container-fluid">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link className="nav-link text-white" to="/">Home</Link>
+            </li>
+            {!isLogged ? (
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link text-white" to="/login">Iniciar Sesión</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link text-white" to="/register">Registro</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link text-white" to="/pokedex">Pokedex</Link>
+                </li>
+              </>
+            ) : null}
+          </ul>
+          {isLogged ? (
+            <button className="btn btn-outline-light" onClick={handleLogout}>Cerrar Sesión</button>
+          ) : null}
+        </div>
+      </nav>
+      <style>
+        {`
+          .nav-link:hover {
+            color: yellow !important; 
+          }
+        `}
+      </style>
+    </header>
+    
   );
 };
 
