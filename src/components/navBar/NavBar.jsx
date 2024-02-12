@@ -43,6 +43,9 @@ const Navbar = () => {
             <li className="nav-item">
               <Link className="nav-link text-white" to="/">Home</Link>
             </li>
+            <li className="nav-item">
+                  <Link className="nav-link text-white" to="/pokedex">Pokedex</Link>
+                </li>
             {!isLogged ? (
               <>
                 <li className="nav-item">
@@ -51,15 +54,13 @@ const Navbar = () => {
                 <li className="nav-item">
                   <Link className="nav-link text-white" to="/register">Registro</Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link text-white" to="/pokedex">Pokedex</Link>
-                </li>
               </>
             ) : null}
           </ul>
           {isLogged ? (
             <button className="btn btn-outline-light" onClick={handleLogout}>Cerrar Sesión</button>
           ) : null}
+          
         </div>
       </nav>
       <style>

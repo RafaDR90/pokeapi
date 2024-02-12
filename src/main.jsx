@@ -8,6 +8,7 @@ import Register from './components/Register.jsx'
 import Navbar from './components/navBar/NavBar.jsx'
 import auth from './Firebase-conf.js'
 import Pokemons from './components/Pokemons.jsx'
+import Detalle from './components/Detalle.jsx'
 
 
 const router= createBrowserRouter([
@@ -38,6 +39,13 @@ const router= createBrowserRouter([
     <Navbar/>
     <Pokemons/>
     </>,
+  },
+  {
+    path: '/detalle',
+    element:<>
+      <Navbar/>
+      <Detalle/>
+    </>
   }
 ])
 
