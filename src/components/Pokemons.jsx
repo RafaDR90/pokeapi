@@ -2,7 +2,8 @@ import { useState } from "react";
 import React from "react";
 import { pokemonUtils } from "./PokeApi";
 import { useEffect } from "react";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+
 
 
 const Pokemons = () => {
@@ -20,8 +21,9 @@ const Pokemons = () => {
                   .catch(error => console.error("Error fetching pokemon details:", error));
           })
           .catch(error => console.error("Error fetching pokemons:", error));
-          console.log(pokemonsDetalle);
   }, []);
+
+
 
   const cargarMasPokemons = () => {
     pokemonUtils.fetchOchoPokemons(contador)
@@ -47,7 +49,7 @@ const Pokemons = () => {
                     <div className=" bg-dark">
                         <img src={pokemon.sprites.other["official-artwork"].front_default} className="card-img-top" alt={pokemon.species.name} />
                         <h5 className="card-title text-light">{pokemon.species.name}</h5>
-                        <Link className="btn btn-light m-2" to={{ pathname: '/detalle', state: { pokemon: pokemon } }}>Ver detalle</Link>
+                        <Link className="btn btn-light m-2" to={{ pathname: '/detalle/'+pokemon.id }}>Ver detalle</Link>
                     </div>
                 </div>
             ))}

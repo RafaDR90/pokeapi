@@ -18,9 +18,25 @@ const fetchOchoPokemons = async (offset) => {
       return null
     }
   };
+
+  const detallePorId = (id) => {
+    try {
+      return fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+      .then((response) => response.json())
+    
+    }catch(error){
+      console.error('Error fetching Pokemon data:', error);
+      return null
+    }
+  }
+
+  
   
   // Exporta un objeto con todas las funciones
   export const pokemonUtils = {
     fetchOchoPokemons,
     obtenerDetalle,
+    detallePorId
   };
+
+  

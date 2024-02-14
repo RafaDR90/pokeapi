@@ -41,7 +41,7 @@ const router= createBrowserRouter([
     </>,
   },
   {
-    path: '/detalle',
+    path: '/detalle/:id',
     element:<>
       <Navbar/>
       <Detalle/>
